@@ -1,0 +1,45 @@
+#System Info Script
+#This will generate information on a linux system
+
+#!/bin/bash
+# Basic System Information
+echo "System Information:"
+
+echo "Operating System: $(uname -o)" 
+echo "Kernel Version: $(uname -r)"
+echo "Host Name: $(hostname)"
+echo "CPU Architecture: $(uname -m)"
+
+
+# CPU Details
+echo "CPU Information:"
+
+lscpu | grep 'Model name' 
+
+
+# Memory Information
+echo "Memory Information:"
+
+free -m | grep 'Mem:'
+
+
+# Disk Usage
+echo "Disk Usage:"
+
+df -h /
+
+
+# Network Interfaces
+echo "Network Interfaces:"
+
+ifconfig
+
+
+# Additional System Details
+echo "System Uptime:"
+
+uptime
+
+# Current User
+echo "Current User:"
+whoami
